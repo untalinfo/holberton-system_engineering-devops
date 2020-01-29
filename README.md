@@ -1,3 +1,3 @@
-**SHELL, BASICS**
+**SHELL**
 
-In this repository, practice with basic shell commands
+practice with shell commands
