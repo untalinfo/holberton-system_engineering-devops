@@ -1,3 +1,3 @@
 ##SHELL REDIRECTIONS##
 In this project practice abouth more commands of shell and redirections commmands ##SHELL REDIRECTIONS##
-In this project practice abouth more commands of shell and redirections commmands 
+In this project practice abouth more commands of sheli and redirections commmands 
