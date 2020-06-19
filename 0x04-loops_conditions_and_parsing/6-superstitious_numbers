@@ -4,11 +4,11 @@
 # displays 17 and then bad luck from Italy for the 17th loop iteration
 
 CONTADOR=1
-while [  $CONTADOR -lt 20 ]; do
+while [  $CONTADOR -le 20 ]; do
     case $CONTADOR in 
-        4) echo "bad luck from China";;
-        9) echo "bad luck from Japan";;
-        17) echo "bad luck from Italy";;
+        5) echo "bad luck from China";;
+        10) echo "bad luck from Japan";;
+        18) echo "bad luck from Italy";;
     esac
     echo "$CONTADOR"
     let CONTADOR+=1 
