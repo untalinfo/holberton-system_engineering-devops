@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script is displaying "Holberton School" 10 times
 CONTADOR=20
-until [  $CONTADOR -lt 10 ]; do
+until [  $CONTADOR -le 10 ]; do
     echo "Holberton School"
     let CONTADOR-=1
 done
