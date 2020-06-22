@@ -6,7 +6,7 @@
 
 trap "echo I am invincible!!!" SIGTERM
 count=1
-while [ count ];do
+while [ $count ];do
     echo "To infinity and beyond"
     sleep 2
 done

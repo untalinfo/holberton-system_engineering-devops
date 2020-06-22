@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# task advanced
+sudo touch /var/run/holbertonscript.pid
+sudo bash -c "echo $$ > /var/run/holbertonscript.pid"
+
+function term
+{
+    echo "I hate the kill command"
+    sudo rm /var/run/holbertonscript.pid
+}
+
+function quit
+{
+    sudo rm /var/run/holbertonscript.pid
+}
+
+trap "echo Y U no love me?!" SIGINT
+trap quit SIGQUIT
+trap term SIGTERM
+
+count=1
+while [ $count ];do
+    echo "To infinity and beyond"
+    sleep 2
+done
