@@ -4,7 +4,7 @@
 # sudo apt-get install software-properties-common
 # sudo add-apt-repository ppa:vbernat/haproxy-2.0
 sudo apt-get -y update
-sudo apt-get -y install haproxy
+sudo apt-get -y install haproxy=2.0.\*
 
 #In order to manage HAProxy via an init script
 echo "ENABLED=1" >> /etc/default/haproxy
@@ -16,7 +16,7 @@ frontend front
     default_backend back
 backend back
     balance roundrobin
-    server 1147-web-01 34.74.140.171:80 check
-    server 1147-web-02 3.95.67.118:80 check
+    server 1572-web-01 34.75.244.196:80 check
+    server 1572-web-02 54.85.50.33:80 check
 EOF
 service haproxy restart
