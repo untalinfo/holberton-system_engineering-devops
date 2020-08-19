@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# script that will display information about subdomain
+get_information ()
+{
+    IP=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')
+    RECORD=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $4}')
+    echo "The subdomain $2 is a $RECORD record and points to $IP"
+}
+if [ $# -eq 2 ]
+then
+    get_information "$1" "$2"
+elif [ $# -eq 1 ]
+then
+    for DOMAIN in 'www' 'lb-01' 'web-01' 'web-02'
+    do
+        get_information "$1" "$DOMAIN"
+    done
+fi
