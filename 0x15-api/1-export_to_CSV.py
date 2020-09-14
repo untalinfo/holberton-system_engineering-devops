@@ -24,5 +24,5 @@ if __name__ == "__main__":
         for todo in TASK:
             if todo.get('userId') == int(USER_ID):
                 cvs_writer.writerow([todo.get("userId"), EMPLOYEE_NAME.get
-                                     ("username"), todo.get("completed"), todo.get
-                                     ("title")])
+                                     ("username"), todo.get("completed"),
+                                     todo.get("title")])
