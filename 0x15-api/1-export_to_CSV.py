@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-using this REST API, for a given employee ID, returns
-information about his/her TODO list progress.
+Using what you did in the task #0, extend your Python script to export
+data in the CSV format.
 """
 import csv
 import requests
@@ -18,10 +18,11 @@ if __name__ == "__main__":
     EMPLOYEE_NAME = requests.get(user_id).json()
     TASK = requests.get('https://jsonplaceholder.typicode.com/todos').json()
 
-    with open(file_name, mode='w') as csv_file:
+    with open(file_name, mode='w', newline='') as csv_file:
         cvs_writer = csv.writer(csv_file, delimiter=',', quotechar='"',
                                 quoting=csv.QUOTE_ALL)
         for todo in TASK:
             if todo.get('userId') == int(USER_ID):
-                cvs_writer.writerow([str(USER_ID), EMPLOYEE_NAME.get("name"),
-                                     todo.get("completed"), todo.get("title")])
+                cvs_writer.writerow([todo.get("userId"), EMPLOYEE_NAME.get
+                                     ("name"), todo.get("completed"), todo.get
+                                     ("title")])
