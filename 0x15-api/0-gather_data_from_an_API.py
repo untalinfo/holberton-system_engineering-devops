@@ -25,6 +25,6 @@ if __name__ == "__main__":
             if todo.get('completed') is True:
                 NUMBER_OF_DONE_TASKS += 1
                 list_task.append(todo.get("title"))
-    print('({}/{})'.format(NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
-    for t in list_task:
-        print('\t {}'.format(t))
+    print('({}/{}):'.format(NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
+    for TASK_TITLE in list_task:
+        print('\t {}'.format(TASK_TITLE))
