@@ -23,5 +23,5 @@ if __name__ == "__main__":
                                 quoting=csv.QUOTE_ALL)
         for todo in TASK:
             if todo.get('userId') == int(USER_ID):
-                cvs_writer.writerow([USER_ID, EMPLOYEE_NAME.get("name"),
+                cvs_writer.writerow([int(USER_ID), EMPLOYEE_NAME.get("name"),
                                      todo.get("completed"), todo.get("title")])
