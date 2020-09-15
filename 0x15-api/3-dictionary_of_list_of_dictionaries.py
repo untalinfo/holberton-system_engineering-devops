@@ -13,8 +13,6 @@ if __name__ == "__main__":
     USER_ID = argv[1]
     file_name = 'todo_all_employees.json'
 
-    user_id = ''
-    print(type(user_id))
     USERS = requests.get('https://jsonplaceholder.typicode.com/users').json()
     TASK = requests.get('https://jsonplaceholder.typicode.com/todos').json()
     data = {}
