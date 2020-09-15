@@ -10,7 +10,6 @@ from sys import argv
 
 if __name__ == "__main__":
 
-    USER_ID = argv[1]
     file_name = 'todo_all_employees.json'
 
     USERS = requests.get('https://jsonplaceholder.typicode.com/users').json()
@@ -18,12 +17,14 @@ if __name__ == "__main__":
     data = {}
 
     for user in USERS:
+        task = []
         data[user.get('id')] = []
         for todo in TASK:
-            data[user.get('id')].append({"task": todo.get("title"),
-                                         "completed": todo.get("completed"),
-                                         "username":
-                                         user.get("username")})
+            if todo.get('userId') == user.get('id'):
+                data[user.get('id')].append({"username": user.get("username"),
+                                             "task": todo.get("title"),
+                                             "completed": todo.get("completed")
+                                             })
 
     with open(file_name, mode='w') as json_file:
         json.dump(data, json_file)
