@@ -21,7 +21,7 @@ def recurse(subreddit, hot_list=[], after=None):
     QUERY = requests.get(URL, headers=header, allow_redirects=False,
                          params={'after': after})
     if QUERY.status_code != 200:
-        print(None)
+        return None
     else:
         after = QUERY.json()['data']['after']
         if after is None:
